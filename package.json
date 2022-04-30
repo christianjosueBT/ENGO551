@@ -1,0 +1,28 @@
+{
+  "name": "capstone",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Self scanning web application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^4.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.3.0",
+    "node-fetch": "^3.2.3",
+    "quagga": "^0.12.1",
+    "server-timing": "^3.3.1"
+  }
+}

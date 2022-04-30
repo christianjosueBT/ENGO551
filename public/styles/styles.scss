@@ -1,0 +1,592 @@
+// ********************** CONFIGURATION **********************
+// custom fonts
+@charset "UTF-8";
+@font-face {
+  font-family: SFMonoRegular;
+  // src: url(../../sf-mono-cufonfonts/SFMonoBold.otf);
+  src: url(../../sf-mono-cufonfonts/SFMonoRegular.otf);
+}
+@font-face {
+  font-family: SFMonoHeavy;
+  src: url(../../sf-mono-cufonfonts/SFMonoHeavy.otf);
+}
+@font-face {
+  font-family: SFMonoLight;
+  src: url(../../sf-mono-cufonfonts/SFMonoLight.otf);
+}
+@font-face {
+  font-family: SFMonoMedium;
+  src: url(../../sf-mono-cufonfonts/SFMonoMedium.otf);
+}
+
+// color variables
+$orange: #fc5404;
+$purple: #87629a;
+$green-dark: #136c72;
+$green-darkest: #23424a;
+$light-pink: #ffeff0;
+$yellow: #f5d67b;
+$white: #fff;
+$black: #212121;
+
+// z indexes
+$layer-1: 100;
+$layer-2: 200;
+$layer-3: 300;
+$layer-4: 400;
+$layer-5: 230949032849082300;
+
+// sizes for stuff
+$size-1: 0.5rem;
+$size-2: 0.75rem;
+$size-3: 1rem;
+$size-4: 1.25rem;
+$size-5: 1.5rem;
+$size-6: 1.75rem;
+$size-7: 2rem;
+$size-8: 3rem;
+$size-9: 4rem;
+$size-10: 5rem;
+$size-11: 7.5rem;
+$size-12: 10rem;
+$size-13: 15rem;
+$size-14: 20rem;
+$size-15: 30rem;
+
+$size-content-1: 20ch;
+$size-content-2: 30ch;
+$size-content-3: 40ch;
+$size-content-4: 60ch;
+
+// font sizes
+$font-size-00: 0.5rem;
+$font-size-0: 0.75rem;
+$font-size-1: 1rem;
+$font-size-2: 1.1rem;
+$font-size-3: 1.25rem;
+$font-size-4: 1.5rem;
+$font-size-5: 2rem;
+$font-size-6: 2.5rem;
+$font-size-7: 3rem;
+$font-size-8: 3.5rem;
+
+// ********************** ROOT AND GENERAL STYLES **********************
+// border box sizing is so much better
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: SFMonoRegular, sans-serif;
+  margin: 0;
+}
+
+//
+header {
+  background: $green-dark;
+  padding: 0.5em 0;
+}
+
+video {
+  object-fit: fill;
+}
+
+img {
+  max-width: 100%;
+  margin-bottom: $size-3;
+}
+
+a {
+  padding-left: 0;
+}
+
+body {
+  margin: 0;
+}
+
+// ********************** UTILITIES STYLES **********************
+.alert {
+  position: absolute;
+  display: inline-block;
+  top: 5rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // right: 0;
+  margin: 0 auto;
+  // width: content;
+  z-index: $layer-2;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.wrapper {
+  z-index: $layer-1;
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+}
+
+.container-grid {
+  height: 75vh;
+  display: grid;
+  place-items: center;
+}
+
+.display--none {
+  display: none !important;
+}
+
+.bgrnd-white {
+  background-color: $white !important;
+  color: $black !important;
+}
+
+.bgrnd-dark {
+  background-color: $black !important;
+  color: $white !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// this is so that we can stack alerts in a nice looking way
+.alert:nth-child(2) {
+  top: 6rem;
+}
+.alert:nth-child(3) {
+  top: 7rem;
+}
+.alert:nth-child(4) {
+  top: 8rem;
+}
+.alert:nth-child(5) {
+  top: 9rem;
+}
+.alert:nth-child(6) {
+  top: 10rem;
+}
+
+// ********************** COMPONENT STYLES **********************
+
+// main section
+.main {
+  margin-top: 3em;
+
+  .primary-content {
+    flex: 2;
+  }
+
+  .sidebar {
+    flex: 1;
+    padding: 1em;
+    text-align: center;
+    color: $white;
+    background-color: $black;
+    border-radius: 1rem;
+    max-width: 450px;
+  }
+}
+
+// navigation
+.nav__link,
+li a,
+.simulateLink {
+  color: $white;
+  text-decoration: none;
+  text-transform: uppercase;
+  // margin-left: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.nav__link:hover {
+  opacity: 0.75;
+  color: $white;
+}
+
+// custom popup styles
+.popupCustom .leaflet-popup-tip,
+.popupCustom .leaflet-popup-content-wrapper {
+  background-color: $black;
+  color: $white;
+  font-size: $font-size-2;
+}
+
+// button
+.button {
+  border: 2px solid $black;
+  display: inline-block;
+  border-radius: 1em;
+  padding: 1em;
+  font-size: initial;
+  font-weight: initial;
+  font-family: inherit;
+  background-color: $black;
+  cursor: pointer;
+  color: $white;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* class to add for mobile support */
+.button--hover {
+  background-color: $white;
+  color: $black;
+}
+
+/* Hover effects */
+@media (hover: hover) {
+  .button:hover {
+    background-color: $white;
+    color: $black;
+  }
+}
+@media (max-width: 603px) {
+  #container {
+    margin: 10px auto;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  #interactive.viewport {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+}
+
+.viewport--placeholder {
+  z-index: $layer-1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  -webkit-transition: transform 0.5s, background-color 1.5s 0.5s;
+  transition: transform 0.5s, background-color 1.5s 0.5s;
+}
+
+#container {
+  z-index: $layer-1;
+  position: absolute;
+  bottom: calc(var(--vh, 1vh) * -100);
+  right: 0;
+  display: grid;
+  place-items: center;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: $white;
+  min-width: 100%;
+  /* -webkit-transition: transform 0.5s, background-color 1.5s 0.5s;
+  transition: transform 0.5s, background-color 1.5s 0.5s; */
+}
+
+#interactive.viewport {
+  z-index: $layer-1;
+  position: relative;
+  display: grid;
+  place-items: center;
+  /* height: calc(var(--vh, 1vh) * 100); */
+
+  canvas,
+  video {
+    max-width: 100%;
+    width: 100%;
+
+    .drawing,
+    .drawingBuffer {
+      z-index: $layer-1;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+.animate--up {
+  animation: slideup 0.5s ease-in forwards;
+}
+
+@keyframes slideup {
+  to {
+    bottom: 0;
+  }
+}
+
+// SIDEBAR CSS
+// taken from the following website:
+// https://bbbootstrap.com/snippets/sidebar-menu-sub-menus-and-toggle-button-27928347
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: $white;
+}
+
+%btn {
+  z-index: $layer-2;
+  position: absolute;
+  display: grid;
+  place-content: center;
+  top: $size-5;
+  height: $size-9;
+  width: $size-9;
+  text-align: center;
+  background: $black;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: left 0.4s ease, right 0.4s ease;
+
+  &.click i:before {
+    content: '\f00d';
+  }
+
+  i {
+    color: $white;
+    font-size: $font-size-5;
+    line-height: $font-size-5;
+  }
+}
+.btn-left {
+  @extend %btn;
+  left: $size-4;
+
+  &.click {
+    left: $size-content-2;
+    z-index: $layer-3;
+  }
+}
+.btn-right {
+  @extend %btn;
+  right: $size-4;
+
+  &.click {
+    right: $size-content-2;
+    z-index: $layer-3;
+  }
+}
+
+%sidebar {
+  position: absolute;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: stretch;
+  color: $white;
+  z-index: $layer-2;
+  width: $size-content-2;
+  height: calc(var(--vh, 1vh) * 100);
+  background: $black;
+  transition: left 0.4s ease, right 0.4s ease;
+  overflow: hidden;
+
+  // ul {
+  //   padding: 0;
+
+  //   flex: 1;
+
+  //   li {
+  //     flex: 1;
+
+  //     a {
+  //       flex: 1;
+  //       pad
+  //     }
+  //   }
+  // }
+}
+.sidebar-left {
+  @extend %sidebar;
+  left: -$size-content-2;
+
+  // a {
+  //   color: $white;
+  // }
+
+  &.show {
+    left: 0;
+  }
+
+  &__profile {
+    font-weight: 600;
+    line-height: 65px;
+    text-align: center;
+    // background-image: url(../imgs/default_user_crop.jpeg);
+    background-size: contain;
+    letter-spacing: 1px;
+    padding-top: $size-3;
+  }
+
+  .button {
+    border: none;
+    padding: 0;
+    width: 100%;
+  }
+  .button:hover {
+    background-color: $orange;
+    color: $white;
+  }
+}
+.sidebar-right {
+  @extend %sidebar;
+  overflow: auto;
+  width: $size-content-2;
+  right: -$size-content-2;
+
+  li {
+    padding-top: $size-3;
+    padding-bottom: $size-1;
+    text-align: center;
+  }
+
+  &.show {
+    right: 0;
+  }
+
+  &__text {
+    text-align: center;
+    align-self: center;
+    margin: 1em 0;
+  }
+
+  &__item {
+    padding: 0 $size-3;
+
+    &:hover {
+      color: $white;
+    }
+
+    // img {
+    //   padding-inline: $size-4;
+    // }
+
+    .row {
+      gap: $size-4;
+      * {
+        flex: 1 2;
+      }
+    }
+  }
+}
+
+nav {
+  background: #1e1e1e;
+}
+
+nav ul {
+  background: $black;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  padding-left: 10px;
+}
+
+nav ul li {
+  line-height: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: $black;
+}
+
+nav ul li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+nav ul li a,
+.simulateLink {
+  color: $white;
+  text-decoration: none;
+  font-size: 13px;
+  padding-left: 14px;
+  font-weight: 500;
+  display: block;
+  background: $black;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+
+nav ul li.active a,
+.simulateLink.active {
+  color: $orange;
+  background: $black;
+  border-left-color: $orange;
+}
+
+nav ul li a:hover {
+  background: $black;
+}
+
+.feat-show {
+  transition: all 0.5s;
+}
+
+nav ul li.active ul {
+  transition: all 0.5s;
+}
+
+nav ul ul {
+  position: static;
+  display: none;
+}
+
+nav ul.show {
+  display: block;
+  transition: all 0.5s;
+}
+
+nav ul ul li {
+  line-height: 42px;
+  border-top: none;
+}
+
+nav ul ul li a {
+  font-size: 12px;
+  color: $white;
+}
+
+nav ul li.active ul li a {
+  color: $white;
+  background: $black;
+  border-left-color: transparent;
+}
+
+a:hover,
+.simulateLink:hover {
+  color: $orange;
+}
+
+nav ul li a span {
+  z-index: $layer-2;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 15px;
+  transition: transform 0.4s;
+}
+
+nav ul li a span.rotate {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+#formNumber {
+  width: $size-11;
+}

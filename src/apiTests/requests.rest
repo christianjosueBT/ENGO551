@@ -1,0 +1,47 @@
+# register a new user
+POST https://localhost:2000/api/v1/users/register
+content-type: application/json
+
+{
+    "name": "Michael",
+    "email": "michael@michael.com",
+    "password": "idklmfaoxd"
+}
+
+
+
+###
+#log in a user
+POST https://localhost:2000/api/v1/users/login
+content-type: application/json
+
+{
+  "email": "michael@michael.com",
+  "password": "idklmfaoxd"
+}
+
+
+
+
+###
+# log out a user
+POST https://localhost:2000/api/v1/users/logout
+content-type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjVhZGJmZGJjNzQ1NzY1MzQ0MTYyNjQiLCJuYW1lIjoiTWljaGFlbCIsImVtYWlsIjoibWljaGFlbEBtaWNoYWVsLmNvbSIsImlhdCI6MTY1MDEzMTEzNX0.r9Y6EkNiNlFdBqSq9q8m_veSIV58OWK0rKASBFR8a4I"
+}
+
+
+
+
+###
+# delete a user
+DELETE https://localhost:2000/api/v1/users/delete
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTAxMzIwMzUsIl9pZCI6IjYyNWFkYmZkYmM3NDU3NjUzNDQxNjI2NCIsIm5hbWUiOiJNaWNoYWVsIiwiZW1haWwiOiJtaWNoYWVsQG1pY2hhZWwuY29tIiwiaWF0IjoxNjUwMTMxMTM1fQ.PEN-2GA9U3FQppvmnIjgKQL0zvi9WazCLrGlTtAcvFs
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjVhZGJmZGJjNzQ1NzY1MzQ0MTYyNjQiLCJuYW1lIjoiTWljaGFlbCIsImVtYWlsIjoibWljaGFlbEBtaWNoYWVsLmNvbSIsImlhdCI6MTY1MDEzMTEzNX0.r9Y6EkNiNlFdBqSq9q8m_veSIV58OWK0rKASBFR8a4I",
+  "password": "idklmfaoxd"
+}
